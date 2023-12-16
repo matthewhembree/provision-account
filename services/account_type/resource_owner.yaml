@@ -28,6 +28,8 @@ Resources:
     Type: AWS::IAM::Role
     Condition: CreateResources
     Properties:
+      RoleName: !Sub 'cloudzero-resource-owner-role-${ReactorAccountId}' # Statically setting this because I give up on integrating the notifier
+                                                                         # and have to provide the role name directly to the CloudZero team.
       Path: '/cloudzero/'
       AssumeRolePolicyDocument:
         Version: 2012-10-17
